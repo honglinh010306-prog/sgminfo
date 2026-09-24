@@ -86,8 +86,8 @@
   --grad-text:  linear-gradient(135deg, #FF4D5E 0%, #FF8C42 100%);
 
   /* Typography */
-  --font-body:  'GFF Latin', 'Inter', system-ui, sans-serif;
-  --font-head:  'GFF VN', 'GFF Latin', 'Montserrat', sans-serif;
+  --font-body:  'GFF Latin', system-ui, sans-serif;
+  --font-head:  'GFF VN', 'GFF Latin', sans-serif;
 
   /* Spacing */
   --section-py: 100px;
