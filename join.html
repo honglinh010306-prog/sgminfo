@@ -20,11 +20,12 @@
         <a href="index.html"   class="nav__link">Trang chủ</a>
         <a href="about.html"   class="nav__link">Về chúng tôi</a>
         <a href="partner.html" class="nav__link">Đối tác</a>
+        <a href="events.html"  class="nav__link">Sự kiện cộng đồng</a>
         
 
       </nav>
       <div class="header__actions">
-        <a href="https://www.tiktok.com/@sgmnetwork" class="btn btn--primary btn--sm">ĐĂNG KÝ KÊNH CHÚNG TÔI</a>
+        <a href="https://www.tiktok.com/@sgmnetwork" target="_blank" rel="noopener" class="btn btn--primary btn--sm">ĐĂNG KÝ KÊNH CHÚNG TÔI</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -46,7 +47,7 @@
         <span>Tham gia với chúng tôi</span>
       </div>
       <h1 class="page-hero__title" data-aos="fade-up">
-        THAM GIA <span class="gradient-text">VỚI CHÚNG TÔI</span>
+        Tham gia <span class="gradient-text">với chúng tôi</span>
       </h1>
       <p class="page-hero__sub" data-aos="fade-up" data-aos-delay="100">
         Bạn muốn phát triển kênh cá nhân của mình, bạn có tài năng về thiết kế và sáng tạo nội dung, về với chúng tôi nhó.
@@ -64,40 +65,30 @@
         </div>
         <div class="join__content">
           <div class="section__tag section__tag--light">Đăng ký tham gia</div>
-          <h2>Sẵn sàng đưa kênh lên <span class="gradient-text">tầm cao mới</span>?</h2>
-          <p>Điền thông tin và đội ngũ của chúng tôi sẽ liên hệ trong vòng 24 giờ để tư vấn miễn phí.</p>
-          <form class="join__form" id="joinForm">
-            <div class="join__form-row">
-              <div class="form-group">
-                <label for="name">Họ và tên</label>
-                <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="example@gmail.com" required />
-              </div>
-            </div>
-            <div class="join__form-row">
-              <div class="form-group">
-                <label for="channel">Link kênh YouTube</label>
-                <input type="url" id="channel" name="channel" placeholder="https://youtube.com/@..." />
-              </div>
-              <div class="form-group">
-                <label for="subs">Số lượng subscribers</label>
-                <select id="subs" name="subs">
-                  <option value="">Chọn mức subscriber</option>
-                  <option>Dưới 10.000</option>
-                  <option>10.000 – 50.000</option>
-                  <option>50.000 – 200.000</option>
-                  <option>200.000 – 1M</option>
-                  <option>Trên 1M</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="btn btn--primary btn--lg btn--full">
-              <i class="ri-send-plane-line"></i> Gửi đăng ký
-            </button>
-          </form>
+          <h2>Đăng ký để <span class="gradient-text">gia nhập với chúng tôi</span>?</h2>
+          <p>Điền vào form đăng ký bên dưới — đội ngũ của chúng tôi sẽ liên hệ trong vòng 24 giờ để tư vấn miễn phí.</p>
+
+          <!-- Google Form embed -->
+          <div class="gform-wrap">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSeRfyWpjXUCih_Ys51zK8xd8ic9JOO03GUZ0QJoW7LGDemv1w/viewform?embedded=true"
+              class="gform-iframe"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Form đăng ký tham gia SGM Network"
+              loading="lazy"
+            >Đang tải…</iframe>
+          </div>
+
+          <!-- Fallback: mở form trong tab mới -->
+          <div class="gform-fallback">
+            <p>Không hiển thị được form?</p>
+            <a href="https://forms.gle/tmtayhcwQDUsmeoSA" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+              <i class="ri-external-link-line"></i> Mở form đăng ký
+            </a>
+          </div>
+
         </div>
       </div>
     </div>
@@ -122,6 +113,7 @@
           <li><a href="index.html">Trang chủ</a></li>
           <li><a href="about.html">Về chúng tôi</a></li>
           <li><a href="partner.html">Đối tác</a></li>
+          <li><a href="events.html">Sự kiện cộng đồng</a></li>
           <li><a href="join.html">Tham gia Network</a></li>
 
         </ul>
