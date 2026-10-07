@@ -9,7 +9,7 @@
 const header = document.getElementById('header');
 
 const onScroll = () => {
-  header.classList.toggle('scrolled', window.scrollY > 40);
+  if (header) header.classList.toggle('scrolled', window.scrollY > 40);
   updateActiveNav();
 };
 
@@ -19,31 +19,33 @@ window.addEventListener('scroll', onScroll, { passive: true });
 const hamburger = document.getElementById('hamburger');
 const nav       = document.getElementById('nav');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  nav.classList.toggle('open');
-  document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
-});
-
-// Close nav when a link is clicked
-nav.querySelectorAll('.nav__link').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    nav.classList.remove('open');
-    document.body.style.overflow = '';
+if (hamburger && nav) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    nav.classList.toggle('open');
+    document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
   });
-});
 
-// Close nav when clicking outside
-document.addEventListener('click', e => {
-  if (nav.classList.contains('open') &&
-      !nav.contains(e.target) &&
-      !hamburger.contains(e.target)) {
-    hamburger.classList.remove('open');
-    nav.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-});
+  // Close nav when a link is clicked
+  nav.querySelectorAll('.nav__link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      nav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Close nav when clicking outside
+  document.addEventListener('click', e => {
+    if (nav.classList.contains('open') &&
+        !nav.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+      hamburger.classList.remove('open');
+      nav.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+}
 
 /* ── 3. Active nav link on scroll ─────────────────── */
 const sections  = document.querySelectorAll('section[id]');
@@ -168,6 +170,7 @@ const toast    = document.getElementById('toast');
 let   toastTimer;
 
 function showToast() {
+  if (!toast) return;
   clearTimeout(toastTimer);
   toast.classList.add('show');
   toastTimer = setTimeout(() => toast.classList.remove('show'), 4000);
@@ -283,6 +286,7 @@ if (popup) {
       const link      = card.dataset.link      || '#';
       const img       = card.dataset.img       || '';
       const fb        = card.dataset.fb        || '';
+      const youtube   = card.dataset.youtube   || '';
 
       // Gán dữ liệu
       popupName.textContent      = name;
@@ -309,6 +313,9 @@ if (popup) {
       }
       if (fb && fb !== '#') {
         socialsHTML += `<a class="popup-social-btn popup-social-btn--facebook" href="${fb}" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i> Facebook</a>`;
+      }
+      if (youtube && youtube !== '#') {
+        socialsHTML += `<a class="popup-social-btn popup-social-btn--youtube" href="${youtube}" target="_blank" rel="noopener"><i class="ri-youtube-fill"></i> YouTube</a>`;
       }
       if (popupSocials) popupSocials.innerHTML = socialsHTML;
 
