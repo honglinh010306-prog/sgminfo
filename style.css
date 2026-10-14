@@ -774,57 +774,63 @@ ul  { list-style: none; }
 
 .websites__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 280px));
+  gap: 20px;
 }
 
 .website-card {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  display: block;
   min-width: 0;
-  min-height: 112px;
-  padding: 22px;
-  background: var(--surface);
+  overflow: hidden;
+  background: var(--surface2);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  transition: border-color var(--t) var(--ease), transform var(--t) var(--ease), background var(--t) var(--ease);
+  border-radius: var(--r-lg);
+  transition: border-color var(--t) var(--ease), transform var(--t) var(--ease), box-shadow var(--t) var(--ease);
 }
 
 .website-card:hover {
-  background: var(--surface2);
   border-color: rgba(232,25,44,.45);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,.5), 0 0 0 1px rgba(232,25,44,.15);
 }
 
-.website-card--featured { border-color: rgba(232,25,44,.3); }
-
-.website-card__icon {
+.website-card__thumb {
+  position: relative;
   display: grid;
-  flex: 0 0 44px;
-  width: 44px;
-  height: 44px;
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(145deg, #191920, #29242a);
+}
+
+.website-card__thumb img {
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+  transition: transform .5s var(--ease);
+}
+
+.website-card:hover .website-card__thumb img { transform: scale(1.06); }
+
+.website-card__badge {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  width: 32px;
+  height: 32px;
   place-items: center;
   border-radius: var(--r-sm);
-  background: rgba(232,25,44,.12);
-  color: var(--red);
-  font-size: 1.3rem;
+  background: var(--red);
+  color: #fff;
 }
 
-.website-card__content {
-  display: grid;
-  flex: 1;
-  min-width: 0;
-  gap: 4px;
-}
-
-.website-card__content strong { font-size: .98rem; }
-.website-card__content span { color: var(--text-2); font-size: .82rem; }
-.website-card__arrow { flex: 0 0 auto; color: var(--text-3); font-size: 1.1rem; }
-.website-card:hover .website-card__arrow { color: var(--red); }
+.website-card__info { padding: 16px; }
+.website-card__info h3 { margin-bottom: 4px; font-size: .95rem; font-weight: 700; }
+.website-card__info span { color: var(--text-3); font-size: .78rem; }
 
 @media (min-width: 1100px) {
-  .websites__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .websites__grid { grid-template-columns: repeat(auto-fill, minmax(220px, 280px)); }
 }
 
 /* ── 8. Join / CTA ─────────────────────────────────── */
