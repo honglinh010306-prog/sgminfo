@@ -784,7 +784,7 @@ ul  { list-style: none; }
   overflow: hidden;
   background: var(--surface2);
   border: 1px solid var(--border);
-  border-radius: var(--r-lg);
+  border-radius: 6px;
   transition: border-color var(--t) var(--ease), transform var(--t) var(--ease), box-shadow var(--t) var(--ease);
 }
 
@@ -828,9 +828,39 @@ ul  { list-style: none; }
 .website-card__info { padding: 16px; }
 .website-card__info h3 { margin-bottom: 4px; font-size: .95rem; font-weight: 700; }
 .website-card__info span { color: var(--text-3); font-size: .78rem; }
+.websites__grid > :only-child { grid-column: 1 / -1; justify-self: center; width: min(100%, 280px); }
 
 @media (min-width: 1100px) {
   .websites__grid { grid-template-columns: repeat(auto-fill, minmax(220px, 280px)); }
+}
+
+@media (min-width: 769px) {
+  .websites__grid { grid-template-columns: minmax(0, 1fr); }
+
+  .websites__grid > :only-child {
+    width: min(100%, 820px);
+    grid-template-columns: minmax(240px, 34%) minmax(0, 1fr);
+    justify-self: center;
+  }
+
+  .website-card { display: grid; }
+
+  .website-card__thumb {
+    min-height: 250px;
+    aspect-ratio: auto;
+  }
+
+  .website-card__thumb img { width: 68%; height: 68%; }
+
+  .website-card__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 36px 42px;
+  }
+
+  .website-card__info h3 { margin-bottom: 10px; font-size: 1.5rem; }
+  .website-card__info span { max-width: 34ch; font-size: .95rem; line-height: 1.7; }
 }
 
 /* ── 8. Join / CTA ─────────────────────────────────── */
@@ -1124,7 +1154,7 @@ ul  { list-style: none; }
 @media (max-width: 768px) {
   :root { --section-py: 56px; }
 
-  .websites__grid { grid-template-columns: 1fr; }
+  .websites__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   /* Container sát hơn */
   .container { width: min(1200px, 100% - 28px); }
@@ -1259,15 +1289,19 @@ ul  { list-style: none; }
   }
 
   .hero__cards {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
 
   .hero__card {
-    width: 100%;
-    padding: 14px 18px;
-    gap: 12px;
+    width: auto;
+    min-width: 0;
+    padding: 14px 12px;
+    gap: 10px;
   }
+
+  .hero__card:last-child { grid-column: 1 / -1; }
 
   .hero__card i { font-size: 1.5rem; }
   .hero__card strong { font-size: 1.15rem; }
@@ -1303,8 +1337,8 @@ ul  { list-style: none; }
   .stat__label  { font-size: .6rem; letter-spacing: .08em; }
 
   /* ── About ── */
-  .about__grid { grid-template-columns: 1fr; gap: 12px; }
-  .about__card { padding: 24px 20px; }
+  .about__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .about__card { padding: 20px 16px; }
 
   /* ── Creators ── */
   .section__header { margin-bottom: 36px; }
@@ -1365,14 +1399,6 @@ ul  { list-style: none; }
   .about-page__stat-box { padding: 20px 16px; }
   .about-page__stat-box strong { font-size: 1.8rem; }
 
-  /* ── Jobs ── */
-  .jobs__grid { grid-template-columns: 1fr; gap: 12px; }
-  .job-card { padding: 20px; }
-
-  /* ── Brands ── */
-  .brands__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .brand-item { padding: 16px; }
-
   /* ── Creator popup — bottom sheet ── */
   .creator-popup {
     padding: 0;
@@ -1415,8 +1441,7 @@ ul  { list-style: none; }
   /* Hero */
   .hero__title { font-size: clamp(1.75rem, 8.5vw, 2.2rem); }
 
-  /* Creators 1 cột */
-  .creators__grid { grid-template-columns: 1fr; gap: 10px; }
+  .creators__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 
   /* Stats vẫn 2 cột */
   .stat__number { font-size: 1.5rem; }
@@ -1432,8 +1457,7 @@ ul  { list-style: none; }
   /* Join */
   .join__box { padding: 20px 14px; }
 
-  /* Brands 1 cột */
-  .brands__grid { grid-template-columns: 1fr; }
+  .brands__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* ── Màn rất nhỏ (≤360px) ── */
@@ -1442,8 +1466,8 @@ ul  { list-style: none; }
   .hero__title { font-size: 1.6rem; }
   .nav__link   { font-size: .88rem; padding: 12px 14px; }
   .stat__number { font-size: 1.3rem; }
-  .about-page__mission-stats { grid-template-columns: 1fr; }
-  .creators__grid { grid-template-columns: 1fr; }
+  .about-page__mission-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .creators__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* ── 13. Page Hero (trang con) ─────────────────────── */
@@ -1666,6 +1690,37 @@ ul  { list-style: none; }
 
 .brand-item:hover img {
   opacity: .8;
+}
+
+@media (max-width: 768px) {
+  .jobs__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .job-card { min-width: 0; padding: 16px 12px; }
+  .job-card__header { gap: 10px; }
+  .job-card__header > div:last-child { min-width: 0; }
+  .job-card__icon { width: 38px; height: 38px; }
+  .job-card__title { font-size: .85rem; overflow-wrap: anywhere; }
+  .job-card__meta { font-size: .68rem; }
+  .job-card__desc { font-size: .76rem; }
+  .job-card__tags { gap: 5px; }
+  .job-card__tags span { font-size: .62rem; padding: 3px 7px; }
+  .job-card .btn--outline {
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+    padding: 9px 8px;
+    font-size: .72rem;
+    white-space: normal;
+  }
+  .brands__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .brand-item { padding: 16px; }
+}
+
+@media (max-width: 360px) {
+  .job-card { padding: 12px 8px; }
+  .job-card__header { gap: 8px; }
+  .job-card__icon { width: 32px; height: 32px; }
+  .job-card__title { font-size: .78rem; }
+  .job-card__desc { font-size: .7rem; }
 }
 
 /* ── 17. Creator Popup ─────────────────────────────── */
@@ -2485,7 +2540,7 @@ ul  { list-style: none; }
 }
 
 @media (max-width: 480px) {
-  .events-grid { grid-template-columns: 1fr; }
+  .events-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .event-featured { padding: 20px 16px; }
   .event-featured__title { font-size: 1.3rem; }
   .event-featured__actions { flex-direction: column; }
