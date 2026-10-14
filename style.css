@@ -769,6 +769,64 @@ ul  { list-style: none; }
 
 .creators__more { text-align: center; }
 
+/* ── 7b. Website directory ────────────────────────── */
+.websites { background: var(--bg); }
+
+.websites__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.website-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  min-height: 112px;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  transition: border-color var(--t) var(--ease), transform var(--t) var(--ease), background var(--t) var(--ease);
+}
+
+.website-card:hover {
+  background: var(--surface2);
+  border-color: rgba(232,25,44,.45);
+  transform: translateY(-3px);
+}
+
+.website-card--featured { border-color: rgba(232,25,44,.3); }
+
+.website-card__icon {
+  display: grid;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: var(--r-sm);
+  background: rgba(232,25,44,.12);
+  color: var(--red);
+  font-size: 1.3rem;
+}
+
+.website-card__content {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 4px;
+}
+
+.website-card__content strong { font-size: .98rem; }
+.website-card__content span { color: var(--text-2); font-size: .82rem; }
+.website-card__arrow { flex: 0 0 auto; color: var(--text-3); font-size: 1.1rem; }
+.website-card:hover .website-card__arrow { color: var(--red); }
+
+@media (min-width: 1100px) {
+  .websites__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
 /* ── 8. Join / CTA ─────────────────────────────────── */
 .join { background: var(--bg); }
 
@@ -1059,6 +1117,8 @@ ul  { list-style: none; }
 /* ── Mobile (≤768px) ── */
 @media (max-width: 768px) {
   :root { --section-py: 56px; }
+
+  .websites__grid { grid-template-columns: 1fr; }
 
   /* Container sát hơn */
   .container { width: min(1200px, 100% - 28px); }
