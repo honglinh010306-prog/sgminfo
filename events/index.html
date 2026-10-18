@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Sự kiện cộng đồng – SGM Network</title>
+  <link rel="icon" type="image/png" href="../icon/LOGO PNG_LOGO BLACK.png" />
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header scrolled" id="header">
+    <div class="container header__inner">
+      <a href="../" class="logo">
+        <img src="../logo/LOGO PNG_WHITE.png" alt="SGM Network" class="logo__img" />
+      </a>
+      <nav class="nav" id="nav">
+        <a href="../"   class="nav__link">Trang chủ</a>
+        <a href="../about/"   class="nav__link">Về chúng tôi</a>
+        <a href="../partner/" class="nav__link">Đối tác</a>
+        <a href="../events/"  class="nav__link active">Sự kiện cộng đồng</a>
+      </nav>
+      <div class="header__actions">
+        <a href="https://www.tiktok.com/@sgmnetwork" target="_blank" rel="noopener" class="btn btn--primary btn--sm">ĐĂNG KÝ KÊNH CHÚNG TÔI</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg">
+      <div class="blob blob--1"></div>
+      <div class="blob blob--2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="container page-hero__content">
+      <div class="page-hero__breadcrumb" data-aos="fade-down">
+        <a href="../">Trang chủ</a>
+        <i class="ri-arrow-right-s-line"></i>
+        <span>Sự kiện cộng đồng</span>
+      </div>
+      <h1 class="page-hero__title" data-aos="fade-up">
+        <span>Sự kiện</span> <span class="gradient-text">cộng đồng</span>
+      </h1>
+      <p class="page-hero__sub" data-aos="fade-up" data-aos-delay="100">
+        Cập nhật những sự kiện, giải đấu và hoạt động cộng đồng Free Fire mới nhất từ SGM Network.
+      </p>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="events-filter-section">
+    <div class="container">
+      <div class="events-filter" data-aos="fade-up">
+        <button class="events-filter__btn active" data-filter="all">Tất cả</button>
+        <button class="events-filter__btn" data-filter="ongoing">Đang diễn ra</button>
+        <button class="events-filter__btn" data-filter="upcoming">Sắp diễn ra</button>
+        <button class="events-filter__btn" data-filter="ended">Đã kết thúc</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS GRID -->
+  <section class="events-section section">
+    <div class="container">
+
+      <!-- Featured event — render bởi JS -->
+      <div id="featuredEventWrap"></div>
+
+      <!-- Events grid — render bởi JS -->
+      <div class="events-grid" id="eventsGrid"></div>
+
+      <!-- Empty state -->
+      <div class="events-empty" id="eventsEmpty" style="display:flex;">
+        <i class="ri-calendar-close-line"></i>
+        <p>Không có sự kiện nào trong mục này.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="../" class="logo">
+          <img src="../logo/LOGO PNG_WHITE.png" alt="SGM Network" class="logo__img" />
+        </a>
+        <p>Hệ sinh thái truyền thông số – kết nối và phát triển cùng những creator tài năng nhất Việt Nam.</p>
+        <div class="footer__socials">
+          <a href="https://www.facebook.com/sgmnetwork0924" aria-label="Facebook" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.tiktok.com/@sgmnetwork" aria-label="TikTok" target="_blank" rel="noopener"><i class="ri-tiktok-fill"></i></a>
+        </div>
+      </div>
+      <div class="footer__links">
+        <h4>Điều hướng</h4>
+        <ul>
+          <li><a href="../">Trang chủ</a></li>
+          <li><a href="../about/">Về chúng tôi</a></li>
+          <li><a href="../partner/">Đối tác</a></li>
+          <li><a href="../events/">Sự kiện cộng đồng</a></li>
+          <li><a href="../join/">Tham gia với chúng tôi</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h4>Liên hệ</h4>
+        <ul>
+          <li><i class="ri-map-pin-line"></i> Hà Nội, Việt Nam</li>
+          <li><i class="ri-mail-line"></i> <a href="mailto:sgmnetwork24@gmail.com">sgmnetwork24@gmail.com</a></li>
+          <li><i class="ri-phone-line"></i> Chưa cập nhật...</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <span>© 2026 SGM Network. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="../privacy/">Chính sách bảo mật</a>
+          <a href="../terms/">Điều khoản sử dụng</a>
+          <a href="../changelog/">Phiên bản</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../main.js"></script>
+</body>
+</html>
