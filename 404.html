@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <base href="/sgminfo/" />
   <title>404 – Không tìm thấy trang | SGM Network</title>
   <link rel="icon" type="image/png" href="icon/LOGO PNG_LOGO BLACK.png" />
   <link rel="stylesheet" href="style.css" />
@@ -241,7 +242,7 @@
       if (el) el.textContent = seconds;
       if (seconds <= 0) {
         clearInterval(timer);
-        window.location.href = 'index.html';
+        window.location.href = './';
       }
     }, 1000);
 
